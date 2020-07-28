@@ -7,3 +7,4 @@ phases:
 artifacts:
   files:
     - target/anagram-service-1.0-SNAPSHOT-lambda-package.zip
+    - serverless.yml
