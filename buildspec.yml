@@ -7,7 +7,6 @@ phases:
     commands:
       - npm -g install serverless
       - mvn package
-      - serverless deploy
 artifacts:
   files:
     - target/anagram-service-1.0-SNAPSHOT-lambda-package.zip
