@@ -8,6 +8,6 @@ phases:
       - serverless package --package target/dev
 artifacts:
   files:
-    - target/anagram-service-1.0-SNAPSHOT-lambda-package.zip
+    - target/**/*
     - serverless.yml
     - deploy.sh
