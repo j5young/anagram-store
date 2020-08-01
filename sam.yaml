@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Lambda with spring boot.
+
+Resources:
+  SpringBootAnagramStoreFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: com.anagram.serverless.springboot.StreamLambdaHandler::handleRequest
+      Runtime: java8
+      CodeUri: target/anagram-store-1.0-SNAPSHOT-lambda-package.zip
+      MemorySize: 1512
+      Timeout: 60
+      Events:
+        GetResource:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: any
+
+Outputs:
+  SpringBootAnagramStoreApi:
+    Description: URL for application
+    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Stage/anagrams'
+    Export:
+      Name: SpringBootAnagramStoreApi
