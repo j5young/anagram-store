@@ -1,5 +1,4 @@
 #! /bin/bash
 
 npm install -g serverless
-serverless deploy --stage dev --package \   
-$CODEBUILD_SRC_DIR/target/dev -v -r us-west-2
+serverless deploy --stage dev --package $CODEBUILD_SRC_DIR/target/dev -v
