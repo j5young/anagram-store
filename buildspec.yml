@@ -2,10 +2,12 @@ version: 0.2
 phases:
   build:
     commands:
+      - npm -g install serverless
       - mvn package
-      - aws cloudformation package --template-file sam.yml --s3-bucket anagram-store-bucket-0803 --output-template-file outputtemplate.yml
+      - mkdir -p target/dev
+      - serverless package --package target/dev
 artifacts:
   files:
     - target/anagram-service-1.0-SNAPSHOT-lambda-package.zip
-    - sam.yml
-    - outputtemplate.yml
+    - serverless.yml
+    - deploy.sh
