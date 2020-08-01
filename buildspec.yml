@@ -1,17 +1,13 @@
 version: 0.2
-
 phases:
-	install:
-    commands:
-    - npm install --silent --no-progress -g npm
-    - npm install --silent --no-progress -g serverless
-  pre_build:
-    commands:
-    - npm install --silent --no-progress
+  install:
+    runtime-versions:
+        nodejs: 10
   build:
-    commands:    
-	- mvn package
-	- sls deploy
+    commands:
+      - npm -g install serverless
+      - mvn package
+      - serverless deploy
 artifacts:
   files:
     - target/anagram-service-1.0-SNAPSHOT-lambda-package.zip
