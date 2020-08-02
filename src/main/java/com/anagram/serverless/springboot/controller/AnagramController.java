@@ -19,6 +19,7 @@ public class AnagramController {
 
 	  @RequestMapping(path = "/anagrams", method = RequestMethod.GET)
 	  public List<String> getAllAnagrams(@RequestParam(value = "input",required=true) String input) {
+		  anagrams.clear();
 		  this.makeAnagram(input.toCharArray(),0);
 		  return anagrams;
 	  }
