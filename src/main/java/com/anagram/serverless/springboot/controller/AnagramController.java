@@ -19,20 +19,8 @@ public class AnagramController {
 
 	  @RequestMapping(path = "/anagrams", method = RequestMethod.GET)
 	  public List<String> getAllAnagrams(@RequestParam(value = "input",required=true) String input) {
-	  //public String getAllAnagrams() {
-		  //anagrams = new Anagram("abc");
-		  //anagrams.setAnagrams(Arrays.asList("abc","bac"));
 		  this.makeAnagram(input.toCharArray(),0);
 		  return anagrams;
-		  //if(input != null && input.trim().length() > 0) {
-		  
-			  
-			  
-		  //}
-		  //return new ResponseEntity<List<String>>(anagrams, HttpStatus.ACCEPTED);
-		  //return "hello anagram";
-		  //return ResponseEntity.badRequest().build();  
-
 	  }
 	  
 	  private void makeAnagram(char[] input, int i) {

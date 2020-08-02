@@ -3,7 +3,7 @@ package com.anagram.serverless.springboot;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.HandlerAdapter;
@@ -52,7 +52,7 @@ public class Application extends SpringBootServletInitializer {
      *
      * To enable custom @ControllerAdvice classes remove this bean.
      */
-    @Bean
+    /*@Bean
     public HandlerExceptionResolver handlerExceptionResolver() {
         return new HandlerExceptionResolver() {
 
@@ -61,7 +61,7 @@ public class Application extends SpringBootServletInitializer {
                 return null;
             }
         };
-    }
+    }*/
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
