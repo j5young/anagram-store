@@ -16,16 +16,18 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableWebMvc
 public class AnagramController {
 	
-   
+    private List<String> anagrams = new ArrayList<String>(); 
        
 
 	  @RequestMapping(path = "/anagrams", method = RequestMethod.GET)
 	  public List<String> getAllAnagrams(@RequestParam(value = "input",required=true) String input) {
-		  return this.makeAnagram(input.toCharArray(),0);
+		  anagrams.clear();
+		  this.makeAnagram(input.toCharArray(),0);
+		  return anagrams;
 	  }
 	  
-	  private List<String> makeAnagram(char[] input, int i) {
-		  	List<String> anagrams = new ArrayList<String>(); 
+	  private void makeAnagram(char[] input, int i) {
+
 			if (i == input.length-1 ) {
 				anagrams.add(String.valueOf(input));
 			}
@@ -40,7 +42,6 @@ public class AnagramController {
 					input[j] = c;
 				}
 			}
-			return anagrams;
 		}
 
 }
