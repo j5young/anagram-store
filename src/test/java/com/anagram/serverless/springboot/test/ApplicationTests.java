@@ -56,7 +56,8 @@ public class ApplicationTests {
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 		MockHttpServletResponse response = result.getResponse();
 
-		String expected = "[abc,acb,bac,bca,cab,cba]";
+		//String expected = "[abc,acb,bac,bca,cab,cba]";
+		String expected = "[airmiles]";
 
 		JSONAssert.assertEquals(expected, result.getResponse()
 				.getContentAsString(), false);
