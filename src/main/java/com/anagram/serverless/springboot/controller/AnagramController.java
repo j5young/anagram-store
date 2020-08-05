@@ -23,9 +23,9 @@ public class AnagramController {
 	  public List<String> getAllAnagrams(@RequestParam(value = "input",required=true) String input) {
 		  anagrams.clear();
 		  this.makeAnagram(input.toCharArray(),0);
-		  List<String> anagrams2 = new ArrayList<String>();
-		  anagrams2.add("airmiles");
-		  return anagrams2;
+		  //List<String> anagrams2 = new ArrayList<String>();
+		  //anagrams2.add("airmiles");
+		  return anagrams;
 	  }
 	  
 	  private void makeAnagram(char[] input, int i) {
